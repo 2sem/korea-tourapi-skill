@@ -1,25 +1,25 @@
-# kto-tourapi-korservice2-skill
+# korea-tourapi-skill
 
-Agent skill for Korea Tourism Organization TourAPI 4.0 (`KorService2`).
+Agent skill for Korea Tourism Organization TourAPI (`KorService2`).
 
 ## Install with npx skills
 
 From GitHub repo:
 
 ```bash
-npx skills add <owner>/kto-tourapi-korservice2-skill --skill kto-tourapi-korservice2 -g -a opencode
+npx skills add <owner>/korea-tourapi-skill --skill korea-tourapi -g -a opencode
 ```
 
 Install for all supported agents:
 
 ```bash
-npx skills add <owner>/kto-tourapi-korservice2-skill --skill kto-tourapi-korservice2 --agent '*' -g
+npx skills add <owner>/korea-tourapi-skill --skill korea-tourapi --agent '*' -g
 ```
 
 List available skills in this repo:
 
 ```bash
-npx skills add <owner>/kto-tourapi-korservice2-skill --list
+npx skills add <owner>/korea-tourapi-skill --list
 ```
 
 ## Skill Focus

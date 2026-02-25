@@ -1,9 +1,9 @@
 ---
-name: kto-tourapi-korservice2
-description: Expert workflow for Korea Tourism Organization TourAPI 4.0 (KorService2). Builds valid requests, validates parameters, handles pagination/errors, and maps responses to app models.
+name: korea-tourapi
+description: Expert workflow for Korea Tourism Organization TourAPI. Builds valid requests, validates parameters, handles pagination/errors, and maps responses to app models.
 ---
 
-# KTO TourAPI KorService2 Skill
+# Korea TourAPI Skill
 
 Use this skill when implementing or debugging integrations with Korea Tourism Organization TourAPI 4.0 KorService2.
 
