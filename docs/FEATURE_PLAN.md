@@ -13,6 +13,11 @@
 9. Sync-mode integration flow (`areaBasedSyncList2`, showflag/modifiedtime/oldContentid).
 10. WhereWeGo model mapping playbook (`contentid`, `contenttypeid`, `mapx`, `mapy`, images).
 
+## Validation Extension (Added)
+
+11. Endpoint-level request validator with denylist enforcement (blocks removed params like `overviewYN`, `subImageYN`).
+12. Endpoint-level response validator with minimum-field checks and shape normalization.
+
 ## Suggested Delivery Phases
 
 - Phase 1 (MVP): features 1-5
@@ -25,3 +30,5 @@
 - Skill catches all documented dependency-param rules.
 - Skill provides safe parse notes for string-encoded numeric fields.
 - Skill includes at least one list flow and one detail flow template.
+- Skill must fail fast on removed params and provide corrected request params.
+- Skill must report response validation status: pass / warn / fail.

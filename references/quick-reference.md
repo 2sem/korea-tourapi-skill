@@ -51,3 +51,8 @@ Header:
 
 Body:
 - `numOfRows`, `pageNo`, `totalCount`, `items.item`
+
+## Validation Source
+
+- Request and response validation rules:
+  - `references/validation-matrix.md`

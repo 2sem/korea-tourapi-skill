@@ -59,6 +59,32 @@ Then add endpoint-specific required params.
    - `detailCommon2` -> `detailIntro2` -> `detailInfo2` -> `detailImage2`
 10. Respect licensing metadata (`cpyrhtDivCd`) in downstream usage.
 
+## Request/Response Validation Feature (Mandatory)
+
+Before implementation guidance, run two explicit checks and report both:
+
+1. Request validation
+2. Response validation
+
+### 1) Request validation
+
+- Validate baseline params: `serviceKey`, `MobileOS`, `MobileApp`, `_type`.
+- Validate endpoint required params from `references/validation-matrix.md`.
+- Validate dependency params (`cat2`/`cat3`, `sigunguCode`, legal-dong, classification-system).
+- Validate removed params denylist:
+  - `defaultYN`, `firstImageYN`, `areacodeYN`, `catcodeYN`, `addrinfoYN`, `mapinfoYN`, `overviewYN`, `subImageYN`
+- If any invalid param exists, block request construction and output a corrected param set.
+
+### 2) Response validation
+
+- Accept success only when `resultCode == "0000"`.
+- Validate envelope shape:
+  - list/detail endpoints: `response.header`, `response.body`, `response.body.items.item`
+  - provider error shape: `resultCode`/`resultMsg` top-level may appear
+- Validate pagination fields when present: `pageNo`, `numOfRows`, `totalCount`.
+- Validate endpoint-specific minimum fields from `references/validation-matrix.md`.
+- If required response fields are missing, return a parsing warning and safe fallback mapping.
+
 ## Content Type IDs (Kor)
 
 - 12: Tour spot
@@ -116,6 +142,8 @@ When this skill is used, always output:
 2. Final request URL (redact or mask `serviceKey`).
 3. Required/optional params split.
 4. Validation checks run.
+   - Request validation result (pass/fail + fixes)
+   - Response validation result (pass/warn/fail)
 5. Pagination handling plan.
 6. Error handling mapping.
 7. Model mapping notes for app code.
@@ -123,5 +151,6 @@ When this skill is used, always output:
 ## Local References
 
 - `references/quick-reference.md`
+- `references/validation-matrix.md`
 - `references/wherewego-mapping.md`
 - `docs/FEATURE_PLAN.md`
