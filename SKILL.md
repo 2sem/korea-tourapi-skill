@@ -86,6 +86,28 @@ Then add endpoint-specific required params.
 - Some older flags were removed from older endpoint revisions.
 - `detailCommon2` is simplified compared with prior revisions.
 
+## Hard Guardrails (Prevent Invalid Params)
+
+Never send removed legacy flags to `detailCommon2`:
+
+- `defaultYN`
+- `firstImageYN`
+- `areacodeYN`
+- `catcodeYN`
+- `addrinfoYN`
+- `mapinfoYN`
+- `overviewYN`
+
+If any of the above appears in generated code, remove it before request execution.
+
+`detailCommon2` request should be treated as:
+
+- baseline params: `serviceKey`, `MobileOS`, `MobileApp`, `_type`
+- required params: `contentId`
+- optional paging only: `numOfRows`, `pageNo`
+
+Also do not use deprecated `subImageYN` on `detailImage2`.
+
 ## Output Contract for Agent
 
 When this skill is used, always output:

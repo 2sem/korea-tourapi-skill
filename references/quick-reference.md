@@ -35,6 +35,15 @@ Required baseline params for all endpoints:
 - `lclsSystm2` requires `lclsSystm1`
 - `lclsSystm3` requires `lclsSystm1` + `lclsSystm2`
 
+## Removed Legacy Params (Do Not Send)
+
+- `detailCommon2`: `defaultYN`, `firstImageYN`, `areacodeYN`, `catcodeYN`, `addrinfoYN`, `mapinfoYN`, `overviewYN`
+- `detailImage2`: `subImageYN`
+
+For `detailCommon2`, use only:
+- baseline params + `contentId`
+- optional `numOfRows`, `pageNo`
+
 ## Common Result Fields
 
 Header:
